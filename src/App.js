@@ -1,22 +1,123 @@
-import React from "react";
+import React, { useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import {
+     avatar1,
+     avatar2,
+     avatar3,
+     avatar4,
+     avatar5,
+     arrow,
+     QR,
+} from "./images/index.js";
 
 function App() {
+     const [selectedItem, setSelectedItem] = useState(0);
+
+     const images = [avatar1, avatar2, avatar3, avatar4, avatar5];
+
      return (
-          <div className='bg-black'>
-               <nav className='flex items-center justify-between bg-gray-800 p-4'>
-                    <div className='text-white font-bold text-xl'>
-                         Site Name
+          <div className='bg-black min-h-screen font-arian-demi space-y-16 '>
+               <nav className='flex items-center justify-between py-6 sm:px-4 md:px-12 xl:px-24 3xl:px-44'>
+                    <div className='text-white text-2xl font-arian-demi font-xl'>
+                         HUMAN{" "}
+                         <span className='text-btn-hover text-gradient-to-r from-btn-hover to-btn-hover-2'>
+                              3.0
+                         </span>
                     </div>
-                    <div className='flex space-x-4'>
-                         <button className='text-white'>Home</button>
-                         <button className='text-white'>About</button>
-                         <button className='text-white'>Mint</button>
-                         <button className='text-white'>Community</button>
+                    <div className='flex sm:space-x-1 md:space-x-2 lg:space-x-4 xl:space-x-8 2xl:space-x-12 3xl:space-x-16 text-sm'>
+                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                              HOME
+                         </button>
+                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                              ABOUT
+                         </button>
+                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                              MINT
+                         </button>
+                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                              COMMUNITY
+                         </button>
                     </div>
                     <div>
-                         <button className='text-white'>Connect Wallet</button>
+                         <button className='py-1.5 px-4 text-black text-sm font-arian-bold bg-gradient-to-r from-btn-hover to-btn-hover-2 rounded-md transition-all duration-500 tracking-wide border border-2 border-border-color hover:bg-black hover:from-transparent hover:to-transparent hover:text-white'>
+                              CONNECT
+                         </button>
                     </div>
                </nav>
+               <div className='relative mx-auto w-full grid justify-center items-center gap-8 row-gap-8 p-16 z-10 grid-cols-[666px,120px] grid-rows-[666px,150px,80px]"'>
+                    <img
+                         src={arrow}
+                         alt='arrow GIF'
+                         className='object-contain h-24 w-24 absolute -top-10 -left-0'
+                    />
+                    <img
+                         src={arrow}
+                         alt='arrow GIF'
+                         className='object-contain h-24 w-24 absolute -top-10 -right-0 rotate-90'
+                    />
+                    <img
+                         src={arrow}
+                         alt='arrow GIF'
+                         className='object-contain h-24 w-24 absolute -bottom-10 -left-0 -rotate-90'
+                    />
+                    <img
+                         src={arrow}
+                         alt='arrow GIF'
+                         className='object-contain h-24 w-24 absolute -bottom-10 -right-0 rotate-180'
+                    />
+                    <img
+                         src={QR}
+                         alt='QR GIF'
+                         className='object-contain h-24 w-24 absolute left-0 bottom-100 mb-24'
+                    />
+                    <img
+                         src={QR}
+                         alt='QR GIF'
+                         className='object-contain h-24 w-24 absolute -right-0 bottom-100 mb-24'
+                    />
+                    <Carousel
+                         selectedItem={selectedItem}
+                         onChange={setSelectedItem}
+                         autoPlay
+                         infiniteLoop
+                         showThumbs={false}
+                         className='col-start-1 col-end-2 row-start-1 row-end-2 h-full object-contain'
+                    >
+                         {images.map((image, index) => (
+                              <div key={index}>
+                                   <img
+                                        src={image}
+                                        alt={`Avatar ${index + 1}`}
+                                        className='h-full w-full'
+                                   />
+                              </div>
+                         ))}
+                    </Carousel>
+                    <div className='col-start-2 col-end-3 flex flex-col gap-4 items-stretch justify-between h-full'>
+                         {images.map((image, index) => (
+                              <img
+                                   key={index}
+                                   src={image}
+                                   alt={`Avatar ${index + 1}`}
+                                   className='flex-1 object-contain cursor-pointer'
+                                   onClick={() => setSelectedItem(index)}
+                              />
+                         ))}
+                    </div>
+                    <h1 className='justify-self-center w-4/5 col-start-1 col-end-3 row-start-2 row-end-3 text-white text-4xl leading-9 text-center'>
+                         Hello friend.{" "}
+                         <span className='bg-gradient-to-r from-blue-400 to-blue-300 text-transparent bg-clip-text'>
+                              Welcome to the future.
+                         </span>{" "}
+                         <br />
+                         Select your new avatar and transcend to the next level
+                         of evolution.
+                    </h1>
+                    <button className='w-40 mx-auto col-start-1 col-end-3 row-start-3 row-end-4 py-1.5 px-4 text-black text-sm font-arian-bold bg-gradient-to-r from-btn-hover to-btn-hover-2 rounded-md transition-bg duration-500 tracking-wide border-2 border-border-color hover:bg-black hover:from-transparent hover:to-transparent hover:text-white'>
+                         MINT
+                    </button>
+               </div>
           </div>
      );
 }

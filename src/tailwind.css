@@ -2,6 +2,20 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+     font-family: "Arian LT Demi";
+     src: url("./fonts/ArianLTDemi.ttf") format("truetype");
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: "Arian LT Bold";
+     src: url("./fonts/ArianLTBold.ttf") format("truetype");
+     font-weight: bold;
+     font-style: normal;
+}
+
 * {
      box-sizing: border-box;
      padding: 0;
@@ -19,4 +33,15 @@ body {
 code {
      font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
           monospace;
+}
+
+.welcome-text {
+     justify-self: center;
+     width: 80%;
+     grid-column: 1 / -1;
+     grid-row: 2 / 3;
+     color: white;
+     font-size: 32px;
+     line-height: 2.25rem;
+     text-align: center;
 }
