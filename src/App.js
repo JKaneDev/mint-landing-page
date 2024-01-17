@@ -698,6 +698,14 @@ function App() {
                          />
                     </div>
                </div>
+               <footer className='flex justify-between items-center py-4 px-8 '>
+                    <p className='text-sm font-arian-bold'>
+                         &copy;2024 HUMAN 3.0 ALL RIGHTS RESERVED
+                    </p>
+                    <p className='text-sm font-arian-bold'>
+                         ARCHITECT: JTKANEDEV
+                    </p>
+               </footer>
           </div>
      );
 }
