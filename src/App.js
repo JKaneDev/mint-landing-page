@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import {
      avatar1,
@@ -13,16 +13,21 @@ import {
      QR,
      roadmap,
 } from "./images/index.js";
+import faqs from "./FAQs.json";
 
 function App() {
      const [selectedItem, setSelectedItem] = useState(0);
      const [isSidebarOpen, setIsSidebarOpen] = useState(false);
      const [counter, setCounter] = useState(0);
+     const [isOpen, setIsOpen] = useState(null);
 
      const images = [avatar1, avatar2, avatar3, avatar4, avatar5];
-
      const toggleSidebar = () => {
           setIsSidebarOpen(!isSidebarOpen);
+     };
+
+     const handleToggle = (id) => {
+          setIsOpen(isOpen === id ? null : id);
      };
 
      const navigateTo = (section) => {
@@ -169,7 +174,7 @@ function App() {
                          alt='arrow GIF'
                          className='object-contain h-24 w-24 absolute -bottom-10 -right-0 rotate-180 filter greyscale opacity-70'
                     />
-                    <img
+                    {/* <img
                          src={QR}
                          alt='QR GIF'
                          className='xs:hidden sm:block object-contain h-24 w-24 absolute left-0 bottom-100 mb-24 filter greyscale opacity-40'
@@ -178,7 +183,7 @@ function App() {
                          src={QR}
                          alt='QR GIF'
                          className='xs:hidden sm:block object-contain h-24 w-24 absolute -right-0 bottom-100 mb-24 filter greyscale opacity-40'
-                    />
+                    /> */}
                     <Carousel
                          selectedItem={selectedItem}
                          onChange={setSelectedItem}
@@ -223,7 +228,7 @@ function App() {
                                    MINT PRICE
                               </p>
                               <p className='font-arian-bold xs:lg md:text-2xl'>
-                                   0.05{" "}
+                                   1.00{" "}
                                    <span className='text-border-color'>
                                         ETH
                                    </span>
@@ -399,6 +404,115 @@ function App() {
                               metaverse that pushes the boundaries of technology
                               and offers an unparalleled virtual experience.
                          </p>
+                    </div>
+               </div>
+               <div className='flex flex-col justify-center items-center space-y-16 p-16'>
+                    <h1 className='text-4xl'>
+                         <span className='text-border-color font-arian-bold'>
+                              F
+                         </span>
+                         requently{" "}
+                         <span className='text-border-color font-arian-bold'>
+                              A
+                         </span>
+                         nswered{" "}
+                         <span className='text-border-color font-arian-bold'>
+                              Q
+                         </span>
+                         uestions
+                    </h1>
+                    <div className='grid gap-4 grid-cols-2 w-full'>
+                         <div className='flex flex-col justify-start space-y-4'>
+                              {faqs
+                                   .filter((_, index) => index % 2 === 0)
+                                   .map((faq, index) => (
+                                        <div
+                                             key={index}
+                                             className='flex flex-col justify-center items-center space-y-4 border-2 border-border-color px-8 py-4 rounded-md'
+                                        >
+                                             <div className='relative flex items-center justify-between w-full'>
+                                                  <h1 className='text-xl font-arian-bold'>
+                                                       {faq.question}
+                                                  </h1>
+                                                  <FaMinus
+                                                       onClick={() =>
+                                                            handleToggle(
+                                                                 index * 2
+                                                            )
+                                                       }
+                                                       className='absolute right-0 top-0 ml-auto cursor-pointer justify-end'
+                                                  />
+                                                  <FaMinus
+                                                       onClick={() =>
+                                                            handleToggle(
+                                                                 index * 2
+                                                            )
+                                                       }
+                                                       className={`absolute top-0 right-0 ml-auto cursor-pointer justify-end transition-transform duration-500 ease-in-out ${
+                                                            isOpen === index * 2
+                                                                 ? "-rotate-180"
+                                                                 : "rotate-90"
+                                                       }`}
+                                                  />
+                                             </div>
+                                             <div
+                                                  className={`overflow-hidden transition-all duration-700 ease-in-out ${
+                                                       isOpen === index * 2
+                                                            ? "max-h-[1000px]"
+                                                            : "max-h-0"
+                                                  }`}
+                                             >
+                                                  <p>{faq.answer}</p>
+                                             </div>
+                                        </div>
+                                   ))}
+                         </div>
+                         <div className='flex flex-col justify-start space-y-4'>
+                              {faqs
+                                   .filter((_, index) => index % 2 !== 0)
+                                   .map((faq, index) => (
+                                        <div
+                                             key={index}
+                                             className='flex flex-col justify-center items-center space-y-4 border-2 border-border-color px-8 py-4 rounded-md'
+                                        >
+                                             <div className='relative flex items-center justify-between w-full'>
+                                                  <h1 className='text-xl font-arian-bold'>
+                                                       {faq.question}
+                                                  </h1>
+                                                  <FaMinus
+                                                       onClick={() =>
+                                                            handleToggle(
+                                                                 index * 2 + 1
+                                                            )
+                                                       }
+                                                       className='absolute right-0 top-0 transitionml-auto cursor-pointer justify-end'
+                                                  />
+                                                  <FaMinus
+                                                       onClick={() =>
+                                                            handleToggle(
+                                                                 index * 2 + 1
+                                                            )
+                                                       }
+                                                       className={`absolute top-0 right-0 ml-auto cursor-pointer justify-end transition-transform duration-700 ease-in-out ${
+                                                            isOpen ===
+                                                            index * 2 + 1
+                                                                 ? "-rotate-180"
+                                                                 : "rotate-90"
+                                                       }`}
+                                                  />
+                                             </div>
+                                             <div
+                                                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                                       isOpen === index * 2 + 1
+                                                            ? "max-h-[1000px]"
+                                                            : "max-h-0"
+                                                  }`}
+                                             >
+                                                  <p>{faq.answer}</p>
+                                             </div>
+                                        </div>
+                                   ))}
+                         </div>
                     </div>
                </div>
           </div>
