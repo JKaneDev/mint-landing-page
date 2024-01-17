@@ -67,44 +67,47 @@ function App() {
      };
 
      return (
-          <div className='bg-black min-h-screen font-arian-demi space-y-16 text-white'>
-               <nav className='flex items-center justify-between py-4 xs:px-8 md:px-12 xl:px-24 3xl:px-44'>
-                    <div className='text-white text-2xl font-arian-demi font-xl'>
-                         HUMAN{" "}
-                         <span className='text-btn-hover text-gradient-to-r from-btn-hover to-btn-hover-2'>
-                              3.0
-                         </span>
-                    </div>
-                    <div className='xs:hidden sm:flex sm:space-x-2 md:space-x-4 lg:space-x-8 xl:space-x-10 2xl:space-x-12 3xl:space-x-16 text-sm'>
-                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
-                              HOME
-                         </button>
-                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
-                              ABOUT
-                         </button>
-                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
-                              MINT
-                         </button>
-                         <button className='text-white hover:text-btn-hover transition-colors duration-300'>
-                              COMMUNITY
-                         </button>
-                    </div>
-                    <div className='xs:flex sm:hidden'>
-                         <button
-                              className='text-white hover:text-btn-hover transition-colors duration-300'
-                              onClick={toggleSidebar}
-                         >
-                              MENU
-                         </button>
-                    </div>
-                    <div className='xs:hidden sm:flex'>
-                         <button className='py-1.5 px-4 text-black text-sm font-arian-bold bg-gradient-to-r from-btn-hover to-btn-hover-2 rounded-md transition-all duration-500 tracking-wide border border-2 border-border-color hover:bg-black hover:from-transparent hover:to-transparent hover:text-white'>
-                              CONNECT
-                         </button>
-                    </div>
-               </nav>
+          <div className='relative bg-black min-h-screen font-arian-demi space-y-16 text-white'>
+               {isSidebarOpen ? null : (
+                    <nav className='z-10 relative flex items-center justify-between py-4 xs:px-8 md:px-12 xl:px-24 3xl:px-44'>
+                         <div className='text-white text-2xl font-arian-demi font-xl'>
+                              HUMAN{" "}
+                              <span className='text-btn-hover text-gradient-to-r from-btn-hover to-btn-hover-2'>
+                                   3.0
+                              </span>
+                         </div>
+                         <div className='xs:hidden sm:flex sm:space-x-2 md:space-x-4 lg:space-x-8 xl:space-x-10 2xl:space-x-12 3xl:space-x-16 text-sm'>
+                              <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                                   HOME
+                              </button>
+                              <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                                   ABOUT
+                              </button>
+                              <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                                   MINT
+                              </button>
+                              <button className='text-white hover:text-btn-hover transition-colors duration-300'>
+                                   COMMUNITY
+                              </button>
+                         </div>
+                         <div className='xs:flex sm:hidden'>
+                              <button
+                                   className='text-white hover:text-btn-hover transition-colors duration-300'
+                                   onClick={toggleSidebar}
+                              >
+                                   MENU
+                              </button>
+                         </div>
+                         <div className='xs:hidden sm:flex'>
+                              <button className='py-1.5 px-4 text-black text-sm font-arian-bold bg-gradient-to-r from-btn-hover to-btn-hover-2 rounded-md transition-all duration-500 tracking-wide border-2 border-border-color hover:bg-black hover:from-transparent hover:to-transparent hover:text-white'>
+                                   CONNECT
+                              </button>
+                         </div>
+                    </nav>
+               )}
+
                {isSidebarOpen && (
-                    <div className='fixed inset-0 bg-black z-50 flex flex-col justify-start items-center py-4'>
+                    <div className='z-50 fixed h-screen inset-0 bg-black flex flex-col justify-start items-center py-4'>
                          <div className='w-full text-white text-2xl font-arian-demi font-xl py-3 px-8 flex flex-row items-center justify-between'>
                               <div className='justify-self-start'>
                                    HUMAN{" "}
@@ -215,7 +218,7 @@ function App() {
                               />
                          ))}
                     </div>
-                    <h1 className='justify-self-center sm:w-full md:w-full lg:w-4/5 col-start-1 col-end-3 row-start-2 row-end-3 text-white sm:text-2xl md:text-3xl leading-9 text-center'>
+                    <h1 className='justify-self-center sm:w-full md:w-full lg:w-4/5 col-start-1 col-end-3 row-start-2 row-end-3 text-white sm:text-2xl md:text-3xl leading-9 text-center xs:mt-2 lg:mt-0'>
                          Hello friend.{" "}
                          <span className='bg-gradient-to-r from-blue-400 to-blue-300 text-transparent bg-clip-text'>
                               Welcome to the future.
@@ -521,7 +524,7 @@ function App() {
                     <h1 className='text-4xl'>
                          COMING <span className='text-border-color'>SOON</span>
                     </h1>
-                    <div className='w-4/5 grid grid-cols-3 rounded-md'>
+                    <div className='xs:w-3/4 lg:w-4/5 grid xs:grid-cols-1 lg:grid-cols-3 xs:gap-8 lg:gap-0 rounded-md'>
                          <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
                               <img
                                    src={weapon}
@@ -534,7 +537,7 @@ function App() {
                                    </span>{" "}
                                    UPGRADES
                               </p>
-                              <p>
+                              <p className='xs:text-center lg:text-left'>
                                    The HUMAN 3.0 metaverse update will introduce
                                    AR targeting, customizable weapon skins,
                                    energy weapons, and advanced mechanics.
@@ -547,7 +550,7 @@ function App() {
                                    LEARN MORE
                               </button>
                          </div>
-                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2 border-r-0 border-l-0 border-[#606060]'>
+                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2 lg:border-r-0 lg:border-l-0 border-[#606060]'>
                               <img
                                    src={armor}
                                    alt='armor'
@@ -559,7 +562,7 @@ function App() {
                                    </span>{" "}
                                    UPGRADES
                               </p>
-                              <p>
+                              <p className='xs:text-center lg:text-left'>
                                    The upcoming armor upgrades in HUMAN 3.0 will
                                    feature adaptive camouflage, enhanced
                                    durability, integrated health monitoring, and
@@ -584,7 +587,7 @@ function App() {
                                    </span>{" "}
                                    HOMES
                               </p>
-                              <p>
+                              <p className='xs:text-center lg:text-left'>
                                    The latest HUMAN 3.0 update introduces
                                    purchasable high-end homes, including
                                    luxurious penthouses, sprawling mansions, and
