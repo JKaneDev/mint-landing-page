@@ -27,6 +27,7 @@ module.exports = {
                     "btn-hover": "#0cc0df",
                     "btn-hover-2": "#1cd6f3",
                     "border-color": "#0cc0df",
+                    "qty-btn-hover": "#8FBC8F",
                },
                objectFit: ["contain", "cover", "fill", "none", "scale-down"],
           },
