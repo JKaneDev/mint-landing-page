@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { FaTimes, FaPlus, FaMinus } from "react-icons/fa";
+import { FaTimes, FaMinus } from "react-icons/fa";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import {
      avatar1,
@@ -10,8 +10,10 @@ import {
      avatar4,
      avatar5,
      arrow,
-     QR,
      roadmap,
+     weapon,
+     apartment,
+     armor,
 } from "./images/index.js";
 import faqs from "./FAQs.json";
 
@@ -190,7 +192,7 @@ function App() {
                          autoPlay
                          infiniteLoop
                          showThumbs={false}
-                         className='col-start-1 col-end-2 row-start-1 row-end-2 object-contain shadow-custom'
+                         className='col-start-1 col-end-2 row-start-1 row-end-2 object-contain shadow-carousel-custom'
                     >
                          {images.map((image, index) => (
                               <div key={index}>
@@ -233,7 +235,7 @@ function App() {
                                         ETH
                                    </span>
                               </p>
-                              <p className='xs:text-sm md:text-lg'>$85.76</p>
+                              <p className='xs:text-sm md:text-lg'>$2545.29</p>
                          </div>
                          <div className='flex flex-col justify-center items-start space-y-2 text-white pl-8'>
                               <p className='font-arian-bold text-sm'>
@@ -274,7 +276,7 @@ function App() {
                          </div>
                     </div>
                     <div className='flex items-center justify-center col-start-1 col-end-3 row-start-4 row-end-5 mx-auto space-x-4 justify-self-center sm:w-full md:w-full lg:w-4/5'>
-                         <div className='flex items-center justify-between text-xl space-x-2 w-40 py-1 px-4 text-black  font-arian-bold bg-gradient-to-r from-btn-hover-2 to-btn-hover border-2 border-border-color rounded-md '>
+                         <div className='flex items-center justify-between text-xl space-x-2 w-40 py-1 px-4 text-black  font-arian-bold bg-gradient-to-r from-[#0CDF74] to-[#0CEA79] border-[#0CEA79] rounded-md '>
                               <AiOutlineMinusCircle
                                    className='cursor-pointer'
                                    onClick={decrementQuantity}
@@ -298,7 +300,7 @@ function App() {
                          </span>
                     </h1>
                     <div className='grid lg:grid-cols-2 lg:grid-rows-2 2xl:grid-cols-4 2xl:grid-rows-1 gap-6'>
-                         <div className='flex flex-col justify-center space-y-4 px-8 py-4 border-2 border-border-color rounded-md'>
+                         <div className='flex flex-col justify-center space-y-4 px-8 py-4 border-2 border-border-color rounded-md shadow-blue-custom-left'>
                               <span className='flex items-center w-full justify-between'>
                                    <p mr-auto>1.</p>
                                    <p justify-self-end>
@@ -318,11 +320,11 @@ function App() {
                                    browser.
                               </p>
                          </div>
-                         <div className='flex flex-col justify-start space-y-4 px-8 py-4 border-2 border-border-color rounded-md'>
+                         <div className='flex flex-col justify-start space-y-4 px-8 py-4 border-2 border-qty-btn-hover rounded-md shadow-green-custom-right'>
                               <span className='flex items-center w-full justify-between'>
                                    <p mr-auto>2.</p>
                                    <p justify-self-end>
-                                        <span className='font-arian-bold text-border-color'>
+                                        <span className='font-arian-bold text-[#0CEA79]'>
                                              CONNECT
                                         </span>{" "}
                                         WALLET
@@ -338,11 +340,11 @@ function App() {
                                    features and perform transactions.
                               </p>
                          </div>
-                         <div className='flex flex-col justify-start space-y-4 px-8 py-4 border-2 border-border-color rounded-md'>
+                         <div className='flex flex-col justify-start space-y-4 px-8 py-4 border-2 border-qty-btn-hover rounded-md shadow-green-custom-left'>
                               <span className='flex items-center w-full justify-between '>
                                    <p mr-auto>3.</p>
                                    <p justify-self-end>
-                                        <span className='font-arian-bold text-border-color'>
+                                        <span className='font-arian-bold text-[#0CEA79]'>
                                              SELECT
                                         </span>{" "}
                                         QUANTITY
@@ -356,7 +358,7 @@ function App() {
                                    click the "Mint" button to proceed.
                               </p>
                          </div>
-                         <div className='flex flex-col justify-start space-y-4 px-8 py-4 border-2 border-border-color rounded-md'>
+                         <div className='flex flex-col justify-start space-y-4 px-8 py-4 border-2 border-border-color rounded-md shadow-blue-custom-right'>
                               <span className='flex items-center w-full justify-between'>
                                    <p mr-auto>4.</p>
                                    <p justify-self-end>
@@ -428,7 +430,7 @@ function App() {
                                    .map((faq, index) => (
                                         <div
                                              key={index}
-                                             className='flex flex-col justify-center items-center space-y-4 border-2 border-border-color px-8 py-4 rounded-md'
+                                             className='flex flex-col justify-center items-center space-y-4 border-2 border-border-color px-8 py-4 rounded-md shadow-blue-custom-left-2'
                                         >
                                              <div className='relative flex items-center justify-between w-full'>
                                                   <h1 className='text-xl font-arian-bold'>
@@ -473,7 +475,7 @@ function App() {
                                    .map((faq, index) => (
                                         <div
                                              key={index}
-                                             className='flex flex-col justify-center items-center space-y-4 border-2 border-border-color px-8 py-4 rounded-md'
+                                             className='flex flex-col justify-center items-center space-y-4 border-2 border-[#0CDF74] px-8 py-4 rounded-md shadow-green-custom-left-2'
                                         >
                                              <div className='relative flex items-center justify-between w-full'>
                                                   <h1 className='text-xl font-arian-bold'>
@@ -512,6 +514,89 @@ function App() {
                                              </div>
                                         </div>
                                    ))}
+                         </div>
+                    </div>
+               </div>
+               <div className='flex flex-col justify-center items-center space-y-16 p-2 w-full'>
+                    <h1 className='text-4xl'>
+                         COMING <span className='text-border-color'>SOON</span>
+                    </h1>
+                    <div className='w-4/5 grid grid-cols-3 rounded-md'>
+                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
+                              <img
+                                   src={weapon}
+                                   alt='weapons'
+                                   className='object-contain min-h-400px w-full rounded-sm'
+                              />
+                              <p className='text-center font-arian-bold'>
+                                   <span className='text-border-color'>
+                                        WEAPONS
+                                   </span>{" "}
+                                   UPGRADES
+                              </p>
+                              <p>
+                                   The HUMAN 3.0 metaverse update will introduce
+                                   AR targeting, customizable weapon skins,
+                                   energy weapons, and advanced mechanics.
+                                   Enhanced environmental interactions and
+                                   audio-visual effects aim to enrich the
+                                   immersive combat experience across multiple
+                                   platforms.
+                              </p>
+                              <button className='font-arian-bold border-0 bg-black text-white transition-all duration-300 hover:text-border-color hover:cursor-pointer'>
+                                   LEARN MORE
+                              </button>
+                         </div>
+                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2 border-r-0 border-l-0 border-[#606060]'>
+                              <img
+                                   src={armor}
+                                   alt='armor'
+                                   className='object-contain min-h-400px w-full rounded-sm'
+                              />
+                              <p className='text-center font-arian-bold'>
+                                   <span className='text-border-color'>
+                                        ARMOR
+                                   </span>{" "}
+                                   UPGRADES
+                              </p>
+                              <p>
+                                   The upcoming armor upgrades in HUMAN 3.0 will
+                                   feature adaptive camouflage, enhanced
+                                   durability, integrated health monitoring, and
+                                   AR interfaces. These improvements focus on
+                                   boosting defense, tactical advantage, and
+                                   player immersion in the metaverse's diverse
+                                   environments.
+                              </p>
+                              <button className='font-arian-bold border-0 bg-black text-white mt-auto justify-self-end transition-all duration-300 hover:text-border-color hover:cursor-pointer'>
+                                   LEARN MORE
+                              </button>
+                         </div>
+                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
+                              <img
+                                   src={apartment}
+                                   alt='apartment'
+                                   className='object-contain min-h-400px w-full rounded-sm'
+                              />
+                              <p className='text-center font-arian-bold'>
+                                   <span className='text-border-color'>
+                                        HIGH-END
+                                   </span>{" "}
+                                   HOMES
+                              </p>
+                              <p>
+                                   The latest HUMAN 3.0 update introduces
+                                   purchasable high-end homes, including
+                                   luxurious penthouses, sprawling mansions, and
+                                   secure underground bunkers. These properties
+                                   offer strategic advantages and in-metaverse
+                                   entertainment, enhancing player experience
+                                   with lavish interiors and advanced
+                                   functionalities.
+                              </p>
+                              <button className='font-arian-bold border-0 bg-black text-white mt-auto justify-self-end transition-all duration-300 hover:text-border-color hover:cursor-pointer'>
+                                   LEARN MORE
+                              </button>
                          </div>
                     </div>
                </div>

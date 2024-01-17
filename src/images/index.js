@@ -6,5 +6,20 @@ import avatar5 from "./avatar-5.png";
 import arrow from "./arrow-gif.gif";
 import QR from "./qr-gif.gif";
 import roadmap from "./roadmap.png";
+import weapon from "./weapon.png";
+import apartment from "./apartment.png";
+import armor from "./armor.png";
 
-export { avatar1, avatar2, avatar3, avatar4, avatar5, arrow, QR, roadmap };
+export {
+     avatar1,
+     avatar2,
+     avatar3,
+     avatar4,
+     avatar5,
+     arrow,
+     QR,
+     roadmap,
+     weapon,
+     apartment,
+     armor,
+};
