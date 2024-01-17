@@ -9,6 +9,7 @@ import roadmap from "./roadmap.png";
 import weapon from "./weapon.png";
 import apartment from "./apartment.png";
 import armor from "./armor.png";
+import hypnotic from "./hypnotic.gif";
 
 export {
      avatar1,
@@ -22,4 +23,5 @@ export {
      weapon,
      apartment,
      armor,
+     hypnotic,
 };

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { FaTimes, FaMinus } from "react-icons/fa";
+import {
+     FaTimes,
+     FaMinus,
+     FaDiscord,
+     FaYoutube,
+     FaTwitter,
+     FaInstagram,
+} from "react-icons/fa";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import {
      avatar1,
@@ -14,6 +21,7 @@ import {
      weapon,
      apartment,
      armor,
+     hypnotic,
 } from "./images/index.js";
 import faqs from "./FAQs.json";
 
@@ -279,14 +287,14 @@ function App() {
                          </div>
                     </div>
                     <div className='flex items-center justify-center col-start-1 col-end-3 row-start-4 row-end-5 mx-auto space-x-4 justify-self-center sm:w-full md:w-full lg:w-4/5'>
-                         <div className='flex items-center justify-between text-xl space-x-2 w-40 py-1 px-4 text-black  font-arian-bold bg-gradient-to-r from-[#0CDF74] to-[#0CEA79] border-[#0CEA79] rounded-md '>
+                         <div className='flex items-center justify-between text-xl space-x-2 w-40 py-1 px-4 text-black  font-arian-bold bg-gradient-to-r from-[#0CDF74] to-[#0CEA79] border-2 border-[#0CEA79] rounded-md '>
                               <AiOutlineMinusCircle
-                                   className='cursor-pointer'
+                                   className='cursor-pointer h-6'
                                    onClick={decrementQuantity}
                               />
                               <p className='text-lg'>{counter}</p>
                               <AiOutlinePlusCircle
-                                   className='cursor-pointer'
+                                   className='cursor-pointer h-6'
                                    onClick={incrementQuantity}
                               />
                          </div>
@@ -426,7 +434,7 @@ function App() {
                          </span>
                          uestions
                     </h1>
-                    <div className='grid gap-4 grid-cols-2 w-full'>
+                    <div className='grid gap-4 grid-cols-2 xs:w-full 2xl:w-[70%]'>
                          <div className='flex flex-col justify-start space-y-4'>
                               {faqs
                                    .filter((_, index) => index % 2 === 0)
@@ -524,8 +532,8 @@ function App() {
                     <h1 className='text-4xl'>
                          COMING <span className='text-border-color'>SOON</span>
                     </h1>
-                    <div className='xs:w-3/4 lg:w-4/5 grid xs:grid-cols-1 lg:grid-cols-3 xs:gap-8 lg:gap-0 rounded-md'>
-                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
+                    <div className='xs:w-3/4 lg:w-[90%] 2xl:w-[70%] grid xs:grid-cols-1 lg:grid-cols-3 xs:gap-8 lg:gap-0 rounded-md'>
+                         <div className='flex flex-col justify-between items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
                               <img
                                    src={weapon}
                                    alt='weapons'
@@ -550,7 +558,7 @@ function App() {
                                    LEARN MORE
                               </button>
                          </div>
-                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2 lg:border-r-0 lg:border-l-0 border-[#606060]'>
+                         <div className='flex flex-col justify-between items-center space-y-4 p-4 h-auto w-full border-2 lg:border-r-0 lg:border-l-0 border-[#606060]'>
                               <img
                                    src={armor}
                                    alt='armor'
@@ -575,7 +583,7 @@ function App() {
                                    LEARN MORE
                               </button>
                          </div>
-                         <div className='flex flex-col justify-start items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
+                         <div className='flex flex-col justify-between items-center space-y-4 p-4 h-auto w-full border-2  border-[#606060]'>
                               <img
                                    src={apartment}
                                    alt='apartment'
@@ -601,6 +609,93 @@ function App() {
                                    LEARN MORE
                               </button>
                          </div>
+                    </div>
+               </div>
+               <div className='flex justify-evenly items-center space-x-8 py-16'>
+                    <div className='flex flex-col justify-center items-start space-y-4'>
+                         <p className='font-arian-bold text-lg'>SITE MENU</p>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              MINT
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              HOW TO
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              ROADMAP
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              FAQs
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              COMING SOON
+                         </button>
+                    </div>
+                    <div className='flex flex-col justify-center items-start space-y-4 '>
+                         <p className='font-arian-bold text-lg'>RESOURCES</p>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              STORE
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              HUMAN 3.0 LORE
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              VIP LOUNGE
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              TIPS & TRICKS
+                         </button>
+                         <button
+                              href='#'
+                              className='border-0 outline-none underline focus:outline-none text-sm text-[#8a8a8a] transition duration-300 hover:text-border-color hover:cursor-pointer'
+                         >
+                              COMMUNITY
+                         </button>
+                    </div>
+                    <div className='flex flex-col justify-center items-start mb-auto space-y-4'>
+                         <p className='font-arian-bold text-lg'>CONTACT</p>
+                         <p className='text-sm font-arian-bold'>
+                              HUMAN3.0@SINGULARITY.NET
+                         </p>
+                         <div className='flex items-center space-x-4'>
+                              <FaDiscord className='text-xl' />
+                              <FaYoutube className='text-xl' />
+                              <FaTwitter className='text-xl' />
+                              <FaInstagram className='text-xl' />
+                         </div>
+                    </div>
+                    <div className='flex flex-col justify-start items-start space-y-4'>
+                         <img
+                              src={hypnotic}
+                              alt='hynotic'
+                              className='h-36 w-36 mb-16'
+                         />
                     </div>
                </div>
           </div>
