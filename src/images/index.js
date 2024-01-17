@@ -5,6 +5,6 @@ import avatar4 from "./avatar-4.png";
 import avatar5 from "./avatar-5.png";
 import arrow from "./arrow-gif.gif";
 import QR from "./qr-gif.gif";
-import roadmap from "./Roadmap.png";
+import roadmap from "./roadmap.png";
 
 export { avatar1, avatar2, avatar3, avatar4, avatar5, arrow, QR, roadmap };

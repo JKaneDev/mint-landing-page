@@ -371,7 +371,36 @@ function App() {
                          </div>
                     </div>
                </div>
-               <div className='flex '></div>
+               <div className='flex flex-col justify-center items-center p-16 space-y-2'>
+                    <h1 className='text-4xl mb-16'>
+                         ROAD<span className='text-border-color'>MAP</span>
+                    </h1>
+                    <img
+                         src={roadmap}
+                         alt='roadmap'
+                         className='xs:w-9/10 lg:w-5/6'
+                    />
+                    <div className='flex flex-col justify-center items-center space-y-4 pt-8'>
+                         <h1 className='text-3xl font-arian-bold'>
+                              Q<span className='text-border-color'>1</span>
+                         </h1>
+                         <p className='font-arian-bold text-xl'>Onboarding</p>
+                         <p className='w-3/4 text-center'>
+                              The team will be focusing on developing new
+                              features, improving user experience, and expanding
+                              the platform's functionality in Q1. One of the
+                              exciting developments planned for this quarter is
+                              the launch of a futuristic VR metaverse. This
+                              metaverse will provide users with an immersive
+                              virtual reality experience, allowing them to
+                              explore unique digital worlds, interact with other
+                              users, and participate in various activities. The
+                              team is dedicated to creating a cutting-edge
+                              metaverse that pushes the boundaries of technology
+                              and offers an unparalleled virtual experience.
+                         </p>
+                    </div>
+               </div>
           </div>
      );
 }
