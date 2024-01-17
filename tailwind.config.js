@@ -4,13 +4,17 @@ module.exports = {
      theme: {
           extend: {
                screens: {
-                    sm: "640px",
+                    xs: "380px",
+                    sm: "651px",
                     md: "768px",
                     lg: "1024px",
                     xl: "1280px",
                     "2xl": "1536px",
                     "3xl": "1920px",
                     "4xl": "2560px",
+               },
+               boxShadow: {
+                    custom: "0 0 25px -12px rgba(255, 255, 255, 0.25)",
                },
                fontFamily: {
                     "arian-demi": ["Arian LT Demi", "Poppins", "sans-serif"],
