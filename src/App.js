@@ -420,7 +420,7 @@ function App() {
                     </div>
                </div>
                <div className='flex flex-col justify-center items-center space-y-16 p-16'>
-                    <h1 className='text-4xl'>
+                    <h1 className='text-4xl text-center'>
                          <span className='text-border-color font-arian-bold'>
                               F
                          </span>
@@ -434,7 +434,7 @@ function App() {
                          </span>
                          uestions
                     </h1>
-                    <div className='grid gap-4 grid-cols-2 xs:w-full 2xl:w-[70%]'>
+                    <div className='xs:flex xs:flex-col xs:space-y-4 lg:grid lg:gap-4 lg:grid-cols-2 xs:w-full 2xl:w-[70%]'>
                          <div className='flex flex-col justify-start space-y-4'>
                               {faqs
                                    .filter((_, index) => index % 2 === 0)
