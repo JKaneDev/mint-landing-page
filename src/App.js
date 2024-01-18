@@ -21,7 +21,7 @@ import {
      weapon,
      apartment,
      armor,
-     hypnotic,
+     skyline,
 } from "./images/index.js";
 import faqs from "./FAQs.json";
 
@@ -611,7 +611,7 @@ function App() {
                          </div>
                     </div>
                </div>
-               <div className='flex justify-evenly items-center space-x-8 py-16'>
+               <div className='flex xs:flex-col xs:space-y-12 xs:pl-[12.5%] lg:pl-0 lg:space-y-0 lg:flex-row lg:justify-evenly lg:items-start lg:space-x-8 lg:py-16'>
                     <div className='flex flex-col justify-center items-start space-y-4'>
                          <p className='font-arian-bold text-lg'>SITE MENU</p>
                          <button
@@ -690,10 +690,10 @@ function App() {
                               <FaInstagram className='text-xl' />
                          </div>
                     </div>
-                    <div className='flex flex-col justify-start items-start space-y-4'>
+                    <div className='flex flex-col justify-start items-start space-y-4 xs: place-self-start lg:place-self-center'>
                          <img
-                              src={hypnotic}
-                              alt='hynotic'
+                              src={skyline}
+                              alt='skyline'
                               className='h-36 w-36 mb-16'
                          />
                     </div>

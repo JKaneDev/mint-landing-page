@@ -10,8 +10,10 @@ import weapon from "./weapon.png";
 import apartment from "./apartment.png";
 import armor from "./armor.png";
 import hypnotic from "./hypnotic.gif";
+import skyline from "./skyline.png";
 
 export {
+     skyline,
      avatar1,
      avatar2,
      avatar3,
